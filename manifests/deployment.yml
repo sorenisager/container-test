@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: funcontainer 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: funcontainer
+  template:
+    metadata:
+      labels:
+        app: funcontainer 
+    spec:
+      containers:
+        - name: funcontainer 
+          image: sorenisager.azurecr.io/funcontainer:latest
+          ports:
+          - containerPort: 80
